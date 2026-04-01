@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login de Acesso - 2º GAC L</title>
+    <link rel="stylesheet" href="style-view.css"> <style>
+        .login-box { max-width: 400px; margin: 100px auto; text-align: center; }
+        select, input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: 1px solid #ddd; }
+        .btn-login { width: 100%; padding: 12px; border: none; border-radius: 25px; background: linear-gradient(135deg, #3d73b9, #1a3a63); color: white; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container login-box">
+        <img src="img/2_GAC.png" alt="Logo" class="mini-logo">
+        <h2>Acesso Restrito</h2>
+        <select id="userRole">
+            <option value="BC">Furriel - BC</option>
+            <option value="1BO">Furriel - 1ª BO</option>
+            <option value="2BO">Furriel - 2ª BO</option>
+            <option value="3BM">Furriel - 3ª BM</option>
+            <option value="ADMIN">Administrador (Geral)</option>
+        </select>
+        <input type="password" id="userPass" placeholder="Digite a Senha">
+        <button class="btn-login" onclick="autenticar()">Entrar no Sistema</button>
+        <br><br>
+        <a href="index.html" style="font-size: 12px; color: #888; text-decoration: none;">← Voltar ao Formulário</a>
+    </div>
+
+    <script>
+        function autenticar() {
+            const role = document.getElementById("userRole").value;
+            const pass = document.getElementById("userPass").value;
+
+            // Defina as senhas aqui
+            const senhas = {
+                "BC": "bc123",
+                "1BO": "1bo123",
+                "2BO": "2bo123",
+                "3BM": "3bm123",
+                "ADMIN": "admin77"
+            };
+
+            if (pass === senhas[role]) {
+                // Salva a sessão temporária no navegador
+                sessionStorage.setItem("logado", "true");
+                sessionStorage.setItem("perfil", role);
+                window.location.href = "visualizar.html";
+            } else {
+                alert("Senha incorreta para este perfil!");
+            }
+        }
+    </script>
+</body>
+</html>

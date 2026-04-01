@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Arranchamento - 2º GAC L</title>
+    <link rel="stylesheet" href="style-view.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+     integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvNikJSJr48OnLdqGyfzh30PQ7h6KC9E9iqwS8g==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <div id="conteudo-imprimir">
+        <header>
+            <img src="img/2_GAC.png" alt="Logo" class="mini-logo">
+            <h2>Relatório de Arranchamento</h2>
+            
+            <div class="bateria-selector">
+                <button class="btn-filter" onclick="renderizarTabela('BC', this)">BC</button>
+                <button class="btn-filter" onclick="renderizarTabela('1BO', this)">1ª BO</button>
+                <button class="btn-filter" onclick="renderizarTabela('2BO', this)">2ª BO</button>
+                <button class="btn-filter" onclick="renderizarTabela('3BM', this)">3ª BM</button>
+            </div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card"><span>☕ Café:</span> <strong id="count-Café">0</strong></div>
+            <div class="stat-card"><span>🍽️ Almoço:</span> <strong id="count-Almoço">0</strong></div>
+            <div class="stat-card"><span>🥣 Janta:</span> <strong id="count-Janta">0</strong></div>
+        </section>
+
+        <div class="table-wrapper">
+            <table id="tabelaRespostas">
+                <thead>
+                    <tr>
+                        <th>Nr</th>
+                        <th>Nome de Guerra</th>
+                        <th>Dias</th>
+                        <th>Refeições</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                    <tr>
+                        <td colspan="4" style="text-align:center; padding: 20px; color: #888;">
+                            Selecione uma bateria para ver os dados...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="acoes-relatorio">
+        <button class="btn-pdf" onclick="gerarPDF()">📄 Salvar PDF</button>
+        <button class="btn-limpar admin-only" onclick="limparTudo()">🗑️ Limpar Tudo</button>
+    </div>
+
+    <button class="btn-voltar" onclick="window.location.href='index.html'">⬅ Voltar ao Formulário</button>
+</div>
+
+<script src="visualizar.js"></script>
+</body>
+</html>

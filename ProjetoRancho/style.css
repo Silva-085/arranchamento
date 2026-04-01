@@ -1,0 +1,182 @@
+/*RESET E BÁSICO*/
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #14703a, #6c83a1);
+    display: flex; justify-content: center; align-items: center;
+    padding: 10px; /* Padding mínimo na tela */
+    overflow: hidden; /* Tenta evitar scroll na tela toda */
+}
+
+/*CONTAINER PRINCIPAL*/
+.container {
+    background: #fff;
+    padding: 15px 20px; /* Reduzido padding interno */
+    border-radius: 15px;
+    width: 100%;
+    max-width: 420px; /* Ligeiramente mais largo para inputs em linha */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/*LOGO COM ANIMAÇÃO VOLTADA */
+.logo {
+    display: flex; justify-content: center;
+    margin-bottom: 5px; /* Espaço mínimo */
+}
+
+.logo img {
+    width: 60px; /* Menor */
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* A ANIMAÇÃO DE ZOOM QUE VOCÊ PEDIU */
+.logo img:hover {
+    transform: scale(1.15) rotate(3deg);
+    filter: drop-shadow(0 5px 8px rgba(0,0,0,0.3));
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px; /* Menor */
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- FORMULÁRIO E INPUTS --- */
+form { display: flex; flex-direction: column; gap: 8px; /* Espaço entre seções */ }
+
+.row { display: flex; gap: 10px; } /* Nome e Número lado a lado */
+.input-group { flex: 1; }
+
+label {
+    display: block;
+    font-size: 11px; /* Micro label */
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.section-label { margin-top: 4px; margin-bottom: 3px; } /* Labels de seções (Bateria, Dia) */
+
+.input-wrapper { position: relative; display: flex; align-items: center; }
+.input-wrapper .icon {
+    position: absolute; left: 8px;
+    font-size: 12px; opacity: 0.7;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 6px 6px 6px 28px; /* Bem mais justo */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 13px;
+    background: #f9f9f9;
+    transition: 0.2s;
+}
+
+.input-wrapper input:focus {
+    border-color: #3db94e;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(61,115,185,0.2);
+    outline: none;
+}
+
+/*ESTILO DOS CARDS (Bateria, Dias, Refeição)*/
+.grid-baterias, .grid-dias, .grid-refeicoes {
+    display: grid; gap: 4px;
+}
+
+/* Esconder inputs originais */
+.card-radio input, .card-check input { display: none; }
+
+/* Base Comum dos Cards */
+.card-radio, .card-check {
+    display: flex; align-items: center; justify-content: center;
+    background: #eee;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    user-select: none;
+}
+
+.card-radio span, .card-check span {
+    font-size: 12px; font-weight: 600; color: #444;
+    padding: 5px; /* Espaço interno do texto */
+}
+
+/* Hover geral */
+.card-radio:hover, .card-check:hover { background: #e0e0e0; transform: translateY(-1px); }
+
+/* Clique geral */
+.card-radio:active, .card-check:active { transform: scale(0.97); }
+
+/*VARIAÇÕES ESPECÍFICAS DE GRID */
+
+/* Baterias: 2 colunas */
+.grid-baterias { grid-template-columns: 1fr 1fr; }
+.card-radio { height: 30px; } /* Altura fixa baixa */
+
+/* Dias: 7 colunas (uma linha só) */
+.grid-dias { grid-template-columns: repeat(7, 1fr); gap: 3px;}
+.card-check { height: 30px; }
+.grid-dias span { font-size: 11px; padding: 2px; } /* Texto menor nos dias */
+
+/* Refeições: 3 colunas */
+.grid-refeicoes { grid-template-columns: repeat(3, 1fr); }
+.card-refeicoes .card-check { height: 35px; } /* Ligeiramente mais alto */
+
+/* --- ESTADOS SELECIONADOS (CHECKED) --- */
+
+/* Bateria Selecionada (Verde Militar) */
+.card-radio:has(input:checked) {
+    background: linear-gradient(135deg, #6c83a1, #14703a);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.card-radio:has(input:checked) span { color: white; }
+
+/* Dias e Refeições Selecionados (Azul) */
+.card-check:has(input:checked) {
+    background: linear-gradient(135deg, #6c83a1, #14703a);
+    box-shadow: 0 2px 5px rgba(61,115,185,0.3);
+}
+.card-check:has(input:checked) span { color: white; }
+
+/* --- BOTÃO E FOOTER --- */
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #3d73b9, #1a3a63);
+    color: white; font-weight: bold; font-size: 14px;
+    cursor: pointer; transition: 0.2s;
+    text-transform: uppercase; letter-spacing: 1px;
+}
+
+button:hover { filter: brightness(1.1); transform: translateY(-1px); }
+button:active { transform: scale(0.98); }
+
+.footer {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+    color: #888;
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+}
