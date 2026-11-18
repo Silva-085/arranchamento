@@ -75,13 +75,13 @@ Interface de preenchimento dos dados e seleção das refeições.
 
 Demonstração do retorno de confirmação após o registro.
 
-![Registro realizado](arrachamento.img/registrado.jpeg)
+![Registro realizado](arrachamento.img/registrado.jpeg.jpeg)
 
 ### 5. Painel de relatórios
 
 Visualização dos quantitativos e registros de arranchamento.
 
-![Painel de relatórios](arrachamento.img/RelatorioArranchamento.jpeg)
+![Painel de relatórios](arrachamento.img/RelatorioArranchamento.jpeg.jpeg)
 
 ### 6. Relatório PDF
 
