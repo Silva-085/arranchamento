@@ -57,37 +57,37 @@ arranchamento/
 
 Interface principal para cadastro de arranchamento.
 
-![Tela inicial](arranchamento.img/telaInicial.png)
+![Tela inicial](arrachamento.img/telaInicial.png)
 
 ### 2. Acesso administrativo
 
 Tela de autenticação para os perfis de gerenciamento.
 
-![Acesso administrativo](arranchamento.img/acessoAdm.png)
+![Acesso administrativo](arrachamento.img/acessoAdm.png)
 
 ### 3. Preenchimento de informações
 
 Interface de preenchimento dos dados e seleção das refeições.
 
-![Preenchimento](arranchamento.img/preenchendoInfo.jpeg)
+![Preenchimento](arrachamento.img/preenchendoInfo.jpeg)
 
 ### 4. Confirmação de cadastro
 
 Demonstração do retorno de confirmação após o registro.
 
-![Registro realizado](arranchamento.img/registrado.jpeg)
+![Registro realizado](arrachamento.img/registrado.jpeg)
 
 ### 5. Painel de relatórios
 
 Visualização dos quantitativos e registros de arranchamento.
 
-![Painel de relatórios](arranchamento.img/RelatorioArranchamento.jpeg)
+![Painel de relatórios](arrachamento.img/RelatorioArranchamento.jpeg)
 
 ### 6. Relatório PDF
 
 Exemplo do relatório gerado pelo sistema.
 
-![Relatório PDF](arranchamento.img/pdfArranchados.png)
+![Relatório PDF](arrachamento.img/pdfArranchados.png)
 
 ## 🎯 Objetivo do projeto
 
