@@ -1,108 +1,98 @@
-# arranchamento
+# 📋 Sistema de Arranchamento — 2º GAC
 
-📋 Sistema de Arranchamento - 2º GAC 
-Sistema digital desenvolvido para a gestão de arranchamento de militares, substituindo formulários físicos por uma interface ágil, segura e com geração de relatórios automáticos para o rancho.
+Sistema web desenvolvido para digitalizar e facilitar o gerenciamento de arranchamento de militares, substituindo processos manuais por uma aplicação com controle de acesso, gerenciamento de registros e geração de relatórios.
 
-🚀 Funcionalidades
-Interface de Cadastro: Formulário intuitivo para militares informarem Número, Nome, Bateria, Dias da semana e Refeições.
+## 🌐 Aplicação
 
-Controle de Acesso: Níveis de permissão distintos para Furriéis e Administrador (Rancho).
+**[Acessar o Sistema](https://arranchamento-2gac.web.app/)**
 
-Gestão por Bateria: Furriéis visualizam e gerenciam apenas os dados da sua própria Subunidade.
+## 🚀 Funcionalidades
 
-Segurança de Dados: Bloqueio de acesso entre baterias e sistema de cancelamento de registros.
+- **Cadastro de militares:** registro de número, nome, bateria, dias da semana e refeições.
+- **Controle de acesso:** diferentes níveis de permissão para Furriéis e Administrador.
+- **Gestão por bateria:** gerenciamento dos registros de cada subunidade.
+- **Gerenciamento de registros:** visualização e cancelamento de solicitações.
+- **Relatórios automáticos:** contabilização de café da manhã, almoço e jantar.
+- **Exportação em PDF:** geração de relatórios otimizados para impressão.
 
-Relatórios Automáticos: Contagem em tempo real de Café, Almoço e Janta.
+## 🔐 Níveis de acesso
 
-Exportação: Geração de relatórios em PDF otimizados para impressão.
+O sistema possui diferentes perfis de utilização:
 
-Perfil,Senha,Permissão
-Furriel BC,bc123,Gerenciar apenas BC
-Furriel 1ª BO,bo1123,Gerenciar apenas 1ª BO
-Furriel 2ª BO,bo2123,Gerenciar apenas 2ª BO
-Furriel 3ª BM,bm3123,Gerenciar apenas 3ª BM
-ADMIN (Rancho),admin77,"Visão total, exclusão global e relatórios de todas as baterias"
+| Perfil | Permissão |
+|---|---|
+| Furriel BC | Gerenciamento da BC |
+| Furriel 1ª BO | Gerenciamento da 1ª BO |
+| Furriel 2ª BO | Gerenciamento da 2ª BO |
+| Furriel 3ª BM | Gerenciamento da 3ª BM |
+| Administrador | Gerenciamento geral do sistema |
 
-🛠️ Tecnologias Utilizadas
-HTML5 & CSS3: Estrutura e estilização moderna com foco em usabilidade.
+*As credenciais de acesso não são disponibilizadas publicamente.*
 
-JavaScript (ES6+): Lógica do sistema, filtros de segurança e manipulação de dados.
+## 🛠️ Tecnologias utilizadas
 
-LocalStorage: Banco de dados local persistente no navegador (dispensa servidor externo).
+- **HTML5:** estrutura da aplicação.
+- **CSS3:** estilização e responsividade.
+- **JavaScript (ES6+):** lógica e funcionalidades do sistema.
+- **Firebase Firestore:** armazenamento e gerenciamento dos dados.
+- **Firebase Hosting:** hospedagem e publicação da aplicação.
 
-Impressão Nativa: Otimização via CSS @media print para geração de documentos PDF sem cortes.
+## 📂 Estrutura do projeto
 
-📂 Estrutura do Projeto
-index.html: Portal de cadastro para o efetivo.
+```text
+arranchamento/
+├── index.html
+├── login.html
+├── visualizar.html
+├── js/
+├── css/
+├── img/
+├── screenshots/
+└── README.md
+```
 
-login.html: Tela de autenticação.
+## 🖥️ Demonstração do sistema
 
-visualizar.html: Painel de controle e relatórios.
+### 1. Tela inicial
 
-js/: Scripts de lógica e segurança.
+Interface principal para cadastro de arranchamento.
 
-css/: Estilização e responsividade.
+![Tela inicial](screenshots/telaInicial.png)
 
-img/: Identidade visual (Brasão da Unidade).
+### 2. Acesso administrativo
 
-O Gemini disse
-Para fechar o projeto com chave de ouro e entregar algo realmente profissional para o seu chefe, um README bem estruturado é essencial. Ele serve como o "manual de instrução" e documentação técnica do sistema.
+Tela de autenticação para os perfis de gerenciamento.
 
-Crie um arquivo chamado README.md na pasta raiz do seu projeto e cole o conteúdo abaixo:
+![Acesso administrativo](screenshots/acessoAdm.png)
 
-📋 Sistema de Arranchamento - 2º GAC L
-Sistema digital desenvolvido para a gestão de arranchamento de militares, substituindo formulários físicos por uma interface ágil, segura e com geração de relatórios automáticos para o rancho.
+### 3. Preenchimento de informações
 
-🚀 Funcionalidades
-Interface de Cadastro: Formulário intuitivo para militares informarem Número, Nome, Bateria, Dias da semana e Refeições.
+Interface de preenchimento dos dados e seleção das refeições.
 
-Controle de Acesso: Níveis de permissão distintos para Furriéis e Administrador (Rancho).
+![Preenchimento de informações](screenshots/preenchendoInfo.jpeg)
 
-Gestão por Bateria: Furriéis visualizam e gerenciam apenas os dados da sua própria Subunidade.
+### 4. Confirmação de cadastro
 
-Segurança de Dados: Bloqueio de acesso entre baterias e sistema de cancelamento de registros.
+Demonstração do retorno de confirmação após o registro.
 
-Relatórios Automáticos: Contagem em tempo real de Café, Almoço e Janta.
+![Registro realizado](screenshots/registrado.jpeg)
 
-Exportação: Geração de relatórios em PDF otimizados para impressão.
+### 5. Painel de relatórios
 
-🔐 Níveis de Acesso
-O sistema utiliza senhas específicas para identificar a função do usuário:
+Visualização dos quantitativos e registros de arranchamento.
 
-Perfil	Senha	Permissão
-Furriel BC	bc123	Gerenciar apenas BC
-Furriel 1ª BO	bo1123	Gerenciar apenas 1ª BO
-Furriel 2ª BO	bo2123	Gerenciar apenas 2ª BO
-Furriel 3ª BM	bm3123	Gerenciar apenas 3ª BM
-ADMIN (Rancho)	admin77	Visão total, exclusão global e relatórios de todas as baterias
-🛠️ Tecnologias Utilizadas
-HTML5 & CSS3: Estrutura e estilização moderna com foco em usabilidade.
+![Painel de relatórios](screenshots/RelatorioArranchamento.jpeg)
 
-JavaScript (ES6+): Lógica do sistema, filtros de segurança e manipulação de dados.
+### 6. Relatório PDF
 
-LocalStorage: Banco de dados local persistente no navegador (dispensa servidor externo).
+Exemplo do relatório gerado pelo sistema.
 
-Impressão Nativa: Otimização via CSS @media print para geração de documentos PDF sem cortes.
+![Relatório PDF](screenshots/pdfArranchados.png)
 
-📂 Estrutura do Projeto
-index.html: Portal de cadastro para o efetivo.
+## 🎯 Objetivo do projeto
 
-login.html: Tela de autenticação.
+Aplicar conhecimentos de desenvolvimento de software na construção de uma solução funcional para organização e gerenciamento de informações, buscando digitalizar processos administrativos e facilitar o controle de arranchamento.
 
-visualizar.html: Painel de controle e relatórios.
+---
 
-js/: Scripts de lógica e segurança.
-
-css/: Estilização e responsividade.
-
-img/: Identidade visual (Brasão da Unidade).
-
-📖 Instruções para Apresentação/Uso
-Abra o arquivo index.html em qualquer navegador moderno.
-
-Para testar o acesso de gestão, clique em Acesso Furriel / ADMIN.
-
-Utilize as senhas de perfil para demonstrar as travas de segurança.
-
-No painel de visualização, utilize o botão Salvar PDF para gerar o documento oficial para o Rancho.
-
+**Status:** Aplicação publicada e disponível para acesso.
